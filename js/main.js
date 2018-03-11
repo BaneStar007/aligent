@@ -12,14 +12,44 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
     $scope.beerData = "Loading";
 
     //Grab all the Beer - TBP (As of this commit, the API key is not unlocked, will await)
-    $scope.data = function () {
+    $scope.listDataCall = function () {
 
         $http({
             method: 'GET',
             url: "http://api.brewerydb.com/v2/?key=" + apiKey,
             headers: { 'Content-Type': 'application/json' }
-        }).then(successCallBack, errorCallBack);
+        }).then(listSuccessCallBack, listErrorCallBack);
     } // end of $scope.data
+
+    $scope.dataCall = function () {
+
+        // without working APIkey, this has yet to be populated.
+
+        $http({
+            method: 'GET',
+            url: "http://api.brewerydb.com/v2/?key=" + apiKey,
+            headers: { 'Content-Type': 'application/json' }
+        }).then(listSuccessCallBack, listErrorCallBack);
+    } // end of $scope.data
+
+    function listSuccessCallBack(response) {
+        $scope.beerList = response.data.data;
+    }
+
+    function listErrorCallBack(error) {
+        console.log("error", err);
+
+        $http.get("./data/beersmock.json")
+            .then(function (response) {
+                $scope.beerList = response.data.data;
+            })
+
+        // generic catch
+        if (err.status == 503 || err.status == 403) {
+            $scope.errModal();
+        }
+
+    }
 
 
     // In order to create dynamic labelling or any other adjustments to data
@@ -32,8 +62,12 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
         { name: "OG", ave: Number($scope.beerData.style.ogMin) }];
     }
 
+
+
+
+
     // If the 
-    function successCallBack(response) {
+    function beerSuccessCallBack(response) {
 
         $scope.beerData = reponse.data.data;
         //console.log("success", response);
@@ -42,7 +76,7 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
 
     };
 
-    function errorCallBack(err) {
+    function beerErrorCallBack(err) {
 
         console.log("error", err);
 
@@ -66,7 +100,7 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
 
     $scope.init = function () {
 
-        $scope.data();
+        $scope.listDataCall();
 
         //your code
     }
