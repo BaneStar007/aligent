@@ -77,7 +77,7 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
 });
 
 
-angular.module('beerSPA').directive('jsonText', function () {
+angular.module('aligent').directive('jsonText', function () {
     return {
         restrict: 'A',
         require: 'ngModel',
