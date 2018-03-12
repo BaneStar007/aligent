@@ -8,6 +8,23 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
     // Set up variables
     var apiKey = 'c18f83196bd4532eead800cd4e38ca1d';
 
+    $scope.testOptions = {
+        min: 3,
+        max: 8,
+        step: 0.5,
+        precision: 1,
+        orientation: 'horizontal',  // vertical
+        handle: 'triangle', //'square', 'triangle' or 'custom'
+        tooltip: 'show', //'hide','always'
+        tooltipseparator: ':',
+        tooltipsplit: false,
+        enabled: true,
+        naturalarrowkeys: false,
+        range: false,
+        ngDisabled: false,
+        reversed: false
+    };
+
     // Angular Variables
     $scope.beerData = "Loading";
 
@@ -36,7 +53,7 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
         $scope.beerList = response.data.data;
     }
 
-    function listErrorCallBack(error) {
+    function listErrorCallBack(err) {
         console.log("error", err);
 
         $http.get("./data/beersmock.json")
@@ -51,6 +68,37 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
 
     }
 
+
+    //Quick and Simple, click the beer in the list, use provided data to populate the field
+    $scope.beerChoosen = function (beer) {
+        $scope.beerChoice = beer;
+
+    }
+
+    //Filters List for the Filters search panel, when API is accessable, will adjust
+    $scope.filtersList = [
+
+        { name: "AleCategory", value: 1 }, // TBP would prefer to dynamically create this list
+        { name: "AleStyle", value: 2 }
+    ]
+
+    $scope.filterAles = function () {
+        // sift through the beerlist and 'hide' any values that don't match the check list.
+        console.log($scope.formData.aleStyle);
+
+        let listLength = $scope.beerList.length;
+
+        for (let listId = 0; listId < listLength; listId++) {
+            // console.log($scope.formData.aleStyle, $scope.beerList[listId].style.categoryId);
+
+            // Does the Beer match the List Set requested
+            if ($scope.beerList[listId].style.categoryId == $scope.formData.aleStyle) {
+                $scope.beerList[listId].hide = false;
+            } else { $scope.beerList[listId].hide = true }
+
+            // Does the Beer come inside the parameters of the Slide?
+        };
+    }
 
     // In order to create dynamic labelling or any other adjustments to data
     $scope.formatData = function () {
@@ -128,3 +176,28 @@ angular.module('aligent').directive('jsonText', function () {
         }
     };
 });
+
+
+// Carosell Code
+
+// Instantiate the Bootstrap carousel
+$('.multi-item-carousel').carousel({
+    interval: false
+});
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+$('.multi-item-carousel .item').each(function () {
+    var next = $(this).next();
+    if (!next.length) {
+        next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    if (next.next().length > 0) {
+        next.next().children(':first-child').clone().appendTo($(this));
+    } else {
+        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+    }
+});
+

@@ -13,10 +13,10 @@
                 "id": 15,
                 "category": {
                     "updateDate": "",
-                    "id": 5,
+                    "id": 1,
                     "description": "",
                     "createDate": "2012-01-02 11:50:42",
-                    "name": "BeerTest1"
+                    "name": "Light"
                 },
                 "description": "",
                 "ibuMax": "27",
@@ -32,7 +32,7 @@
                 "ogMin": "1.064",
                 "abvMin": "6.3",
                 "name": "Traditional Beer",
-                "categoryId": 5
+                "categoryId": 1
             },
             "status": "verified",
             "srmId": "",
@@ -46,7 +46,7 @@
             "beerVariation": [],
             "abv": "6",
             "year": "",
-            "name": "\"My\" Bock",
+            "name": "Yellow Beer",
             "id": "HXKxpc",
             "originalGravity": "",
             "styleId": 15,
@@ -78,10 +78,10 @@
                 "id": 15,
                 "category": {
                     "updateDate": "",
-                    "id": 5,
+                    "id": 1,
                     "description": "",
                     "createDate": "2012-01-02 11:50:42",
-                    "name": "BeerTest2"
+                    "name": "Light"
                 },
                 "description": "",
                 "ibuMax": "27",
@@ -96,8 +96,8 @@
                 "abvMax": "7.2",
                 "ogMin": "1.064",
                 "abvMin": "6.3",
-                "name": "Traditional Ale",
-                "categoryId": 5
+                "name": "Traditional Beer",
+                "categoryId": 1
             },
             "status": "verified",
             "srmId": "",
@@ -111,7 +111,7 @@
             "beerVariation": [],
             "abv": "6",
             "year": "",
-            "name": "\"My\" Bock",
+            "name": "Orange Beer",
             "id": "ABCDE",
             "originalGravity": "",
             "styleId": 15,
@@ -143,10 +143,10 @@
                 "id": 15,
                 "category": {
                     "updateDate": "",
-                    "id": 5,
+                    "id": 2,
                     "description": "",
                     "createDate": "2012-01-02 11:50:42",
-                    "name": "BeerTest 3"
+                    "name": "Mid"
                 },
                 "description": "",
                 "ibuMax": "27",
@@ -161,8 +161,8 @@
                 "abvMax": "7.2",
                 "ogMin": "1.064",
                 "abvMin": "6.3",
-                "name": "Traditional Bock",
-                "categoryId": 5
+                "name": "Traditional Beer",
+                "categoryId": 1
             },
             "status": "verified",
             "srmId": "",
@@ -176,7 +176,202 @@
             "beerVariation": [],
             "abv": "6",
             "year": "",
-            "name": "\"My\" Bock",
+            "name": "Red Beer",
+            "id": "ABCDE",
+            "originalGravity": "",
+            "styleId": 15,
+            "ibu": "",
+            "glasswareId": 5,
+            "isOrganic": "N",
+            "createDate": "2012-01-02 11:51:13",
+            "available": {
+                "description": "Available year round as a staple beer.",
+                "name": "Year Round"
+            },
+            "glass": {
+                "updateDate": "",
+                "id": 5,
+                "description": "",
+                "createDate": "2012-01-02 11:50:42",
+                "name": "Pint"
+            },
+            "description": "Amber, malty and not too heavy, all around favorite even for the drinkers of the yellow fizzy stuff"
+        },
+        {
+            "servingTemperatureDisplay": "",
+            "labels": {
+                "medium": "http://s3.amazonaws.com/",
+                "large": "http://s3.amazonaws.com/",
+                "icon": "http://s3.amazonaws.com/"
+            },
+            "style": {
+                "id": 15,
+                "category": {
+                    "updateDate": "",
+                    "id": 2,
+                    "description": "",
+                    "createDate": "2012-01-02 11:50:42",
+                    "name": "Mid"
+                },
+                "description": "",
+                "ibuMax": "27",
+                "srmMin": "14",
+                "srmMax": "22",
+                "ibuMin": "20",
+                "ogMax": "1.072",
+                "fgMin": "1.013",
+                "fgMax": "1.019",
+                "createDate": "2012-01-02 11:50:42",
+                "updateDate": "",
+                "abvMax": "7.2",
+                "ogMin": "1.064",
+                "abvMin": "6.3",
+                "name": "Traditional Ale",
+                "categoryId": 2
+            },
+            "status": "verified",
+            "srmId": "",
+            "beerVariationId": "",
+            "statusDisplay": "Verified",
+            "foodPairings": "",
+            "srm": [],
+            "updateDate": "",
+            "servingTemperature": "",
+            "availableId": 1,
+            "beerVariation": [],
+            "abv": "6",
+            "year": "",
+            "name": "Burgandy Beer",
+            "id": "ABCDE",
+            "originalGravity": "",
+            "styleId": 15,
+            "ibu": "",
+            "glasswareId": 5,
+            "isOrganic": "N",
+            "createDate": "2012-01-02 11:51:13",
+            "available": {
+                "description": "Available year round as a staple beer.",
+                "name": "Year Round"
+            },
+            "glass": {
+                "updateDate": "",
+                "id": 5,
+                "description": "",
+                "createDate": "2012-01-02 11:50:42",
+                "name": "Pint"
+            },
+            "description": "Amber, malty and not too heavy, all around favorite even for the drinkers of the yellow fizzy stuff"
+        },
+        {
+            "servingTemperatureDisplay": "",
+            "labels": {
+                "medium": "http://s3.amazonaws.com/",
+                "large": "http://s3.amazonaws.com/",
+                "icon": "http://s3.amazonaws.com/"
+            },
+            "style": {
+                "id": 15,
+                "category": {
+                    "updateDate": "",
+                    "id": 3,
+                    "description": "",
+                    "createDate": "2012-01-02 11:50:42",
+                    "name": "Dark"
+                },
+                "description": "",
+                "ibuMax": "27",
+                "srmMin": "14",
+                "srmMax": "22",
+                "ibuMin": "20",
+                "ogMax": "1.072",
+                "fgMin": "1.013",
+                "fgMax": "1.019",
+                "createDate": "2012-01-02 11:50:42",
+                "updateDate": "",
+                "abvMax": "7.2",
+                "ogMin": "1.064",
+                "abvMin": "6.3",
+                "name": "Traditional Ale",
+                "categoryId": 2
+            },
+            "status": "verified",
+            "srmId": "",
+            "beerVariationId": "",
+            "statusDisplay": "Verified",
+            "foodPairings": "",
+            "srm": [],
+            "updateDate": "",
+            "servingTemperature": "",
+            "availableId": 1,
+            "beerVariation": [],
+            "abv": "6",
+            "year": "",
+            "name": "Brown Beer",
+            "id": "ABCDE",
+            "originalGravity": "",
+            "styleId": 15,
+            "ibu": "",
+            "glasswareId": 5,
+            "isOrganic": "N",
+            "createDate": "2012-01-02 11:51:13",
+            "available": {
+                "description": "Available year round as a staple beer.",
+                "name": "Year Round"
+            },
+            "glass": {
+                "updateDate": "",
+                "id": 5,
+                "description": "",
+                "createDate": "2012-01-02 11:50:42",
+                "name": "Pint"
+            },
+            "description": "Amber, malty and not too heavy, all around favorite even for the drinkers of the yellow fizzy stuff"
+        },
+        {
+            "servingTemperatureDisplay": "",
+            "labels": {
+                "medium": "http://s3.amazonaws.com/",
+                "large": "http://s3.amazonaws.com/",
+                "icon": "http://s3.amazonaws.com/"
+            },
+            "style": {
+                "id": 15,
+                "category": {
+                    "updateDate": "",
+                    "id": 3,
+                    "description": "",
+                    "createDate": "2012-01-02 11:50:42",
+                    "name": "Dark"
+                },
+                "description": "",
+                "ibuMax": "27",
+                "srmMin": "14",
+                "srmMax": "22",
+                "ibuMin": "20",
+                "ogMax": "1.072",
+                "fgMin": "1.013",
+                "fgMax": "1.019",
+                "createDate": "2012-01-02 11:50:42",
+                "updateDate": "",
+                "abvMax": "7.2",
+                "ogMin": "1.064",
+                "abvMin": "6.3",
+                "name": "Traditional Stout",
+                "categoryId": 3
+            },
+            "status": "verified",
+            "srmId": "",
+            "beerVariationId": "",
+            "statusDisplay": "Verified",
+            "foodPairings": "",
+            "srm": [],
+            "updateDate": "",
+            "servingTemperature": "",
+            "availableId": 1,
+            "beerVariation": [],
+            "abv": "6",
+            "year": "",
+            "name": "Black Beer",
             "id": "ABCDE",
             "originalGravity": "",
             "styleId": 15,
