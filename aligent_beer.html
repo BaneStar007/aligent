@@ -13,7 +13,9 @@
     <![endif]-->
     <script src="./js/angular.1.6.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./js/bootstrap.js"></script>
+    <script src="./js/bootstrap.jsa"></script>
+
+    <!-- Going to have to rewrite this section as going over the text I note it says "Write your own code" without any references to libraries or directives.. -->
     <script src="./js/bootstrap-slider.js"></script>
     <script src="./js/main.js"></script>
 
@@ -29,125 +31,91 @@
 <body ng-app="aligent" ng-controller="aligentControl">
 
     <div class="container">
-        <h1>Pick the Beer list you'd like to view.</h1>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="carousel slide multi-item-carousel" id="theCarousel">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/f44336/000000" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/e91e63/000000" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/9c27b0/000000" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/673ab7/000000" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/4caf50/000000" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/8bc34a/000000" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- add  more items here -->
-                        <!-- Example item start:  -->
+        <h1>Beer Style Picker</h1>
+        <div class="row picker">
+            <form name="ales ">
+                <div class="col-md-12">
+                    <div class=" slide multi-item-view" id="theView">
+                        <div class="view-inner">
 
-                        <div class="item">
-                            <div class="col-xs-4">
-                                <a href="#1">
-                                    <img src="http://placehold.it/300/8bc34a/000000" class="img-responsive">
-                                </a>
+                            <!-- All listed Items in View Port-->
+                            <div class="item" ng-repeat="filters in filtersList">
+                                <div class=" col-xs-{{filterSize}} ">
+                                    <div class="img-responsive radio-inline " ng-click="filterAles() ">
+                                        <label for="{{filters.name}} ">
+                                            <input name="{{filters.name}}" type="radio" value="{{filters.value}}" ng-model="$parent.formData.aleStyle" /> {{filters.name}}
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <!--  Example item end -->
+
+                        </div>
+                        <!-- navgation for viewer 
+
+                            Until working API, unknown how many types might bee needed.
+                        <a class="left view-control " href="#theView " ng-click="viewPrev() ">
+                            <i class="glyphicon glyphicon-chevron-left "></i>
+                        </a>
+                        <a class="right view-control " href="#theView " ng-click="viewNext() ">
+                            <i class="glyphicon glyphicon-chevron-right "></i>
+                        </a>
+                    -->
                     </div>
-                    <a class="left carousel-control" href="#theCarousel" data-slide="prev">
-                        <i class="glyphicon glyphicon-chevron-left"></i>
-                    </a>
-                    <a class="right carousel-control" href="#theCarousel" data-slide="next">
-                        <i class="glyphicon glyphicon-chevron-right"></i>
-                    </a>
                 </div>
-            </div>
+
+
+
+                <div class="sliders col-xs-10 col-xs-offset-1">
+                    <h3>ABV</h3>
+                    <div class="col-xs-1">{{abvOptions.min}}</div>
+                    <div class="col-xs-10">
+                        <slider slider-id="abvOptions.sliderId " ng-model="abvValue.min " value="abvValue.value " min="abvOptions.min
+                            " max="abvOptions.max " step="abvOptions.step " range="abvOptions.range " precision="{{ abvOptions.precision }}
+                            " reversed="{{ abvOptions.reversed }} " orientation="{{ abvOptions.orientation }} " handle="{{ abvOptions.handle }} "
+                            enabled="{{ abvOptions.enabled }} " ng-disabled="abvOptions.ngDisabled " naturalarrowkeys="{{ abvOptions.naturalarrowkeys }} ">
+                    </div>
+                    <div class="col-xs-1">{{abvOptions.max}}</div>
+                </div>
+                <div class="sliders col-xs-10 col-xs-offset-1">
+                    <h3> IBU</h3>
+                    <div class="col-xs-1">{{ibuOptions.min}}</div>
+                    <div class="col-xs-10">
+                        <slider slider-id="ibuOptions.sliderId " ng-model="ibuValue.min " value="ibuValue.value " min="ibuOptions.min
+                            " max="ibuOptions.max " step="ibuOptions.step " range="ibuOptions.range " precision="{{ ibuOptions.precision }}
+                            " reversed="{{ ibuOptions.reversed }} " orientation="{{ ibuOptions.orientation }} " handle="{{ ibuOptions.handle }} "
+                            enabled="{{ ibuOptions.enabled }} " ng-disabled="ibuOptions.ngDisabled " naturalarrowkeys="{{ ibuOptions.naturalarrowkeys }} ">
+                    </div>
+                    <div class="col-xs-1">{{ibuOptions.max}}</div>
+                </div>
+            </form>
         </div>
-    </div>
-
-    <div class="header">
-        <form name="ales">
-            <div class="checkboxContainer radio-inline" ng-click="filterAles()">
-                <input name="Beer" type="radio" value=1 ng-model="formData.aleStyle" />
-                <label for="Beer">Beer</label>
-            </div>
-            <div class="checkboxContainer">
-                <input name="Ales" type="radio" value=2 ng-model="formData.aleStyle" ng-click="filterAles()" />
-                <label for="Ales">Ales</label>
-            </div>
-            <div class="checkboxContainer">
-                <input name="Stout" type="radio" value=3 ng-model="formData.aleStyle" ng-click="filterAles()" />
-                <label for="Stout">Stout</label>
-            </div>
-
-            <div class="sliders">
-                {{model.first}}
-                <slider slider-id="testOptions.sliderId" ng-model="model.first" value="value.first" min="testOptions.min" max="testOptions.max"
-                    step="testOptions.step" range="testOptions.range" precision="{{ testOptions.precision }}" reversed="{{ testOptions.reversed }}"
-                    orientation="{{ testOptions.orientation }}" handle="{{ testOptions.handle }}" enabled="{{ testOptions.enabled }}"
-                    ng-disabled="testOptions.ngDisabled" naturalarrowkeys="{{ testOptions.naturalarrowkeys }}">
-            </div>
-            <div class="sliders">
-                <slider slider-id="testOptions.sliderId" ng-model="model.first" value="value.first" min="testOptions.min" max="testOptions.max"
-                    step="testOptions.step" range="testOptions.range" precision="{{ testOptions.precision }}" reversed="{{ testOptions.reversed }}"
-                    orientation="{{ testOptions.orientation }}" handle="{{ testOptions.handle }}" enabled="{{ testOptions.enabled }}"
-                    ng-disabled="testOptions.ngDisabled" naturalarrowkeys="{{ testOptions.naturalarrowkeys }}">
-
-            </div>
-        </form>
-    </div>
 
 
     </div>
+    <div class="beerlist col-xs-3">
 
-    <ul>
-        <li ng-hide="beer.hide" ng-repeat="beer in beerList " ng-click="beerChoosen(beer) ">{{beer.name}}</li>
-    </ul>
+        <ul>
+            <li ng-hide="beer.hide " ng-repeat="beer in beerList " ng-click="beerChoosen(beer) ">{{beer.name}}</li>
+        </ul>
 
-    <ul>
-        <li>
-            <h2>{{beerChoice.name}}</h2>
-        </li>
-        <li>{{beerChoice.description}}</li>
-        <li>{{beeChoice.abv}}</li>
+    </div>
+    <div class="beerChoiceContainer col-xs-9">
 
-    </ul>
-    {{beerChoice |json}}
+        <div ng-if="beerChoice.name" class="beerData">
+            <ul>
+                <li>
+                    <h2>{{beerChoice.name}}</h2>
+                </li>
+                <li>{{beerChoice.description}}</li>
+                <li>{{beeChoice.abv}}</li>
+
+            </ul>
+        </div>
+        <div ng-if="!beerChoice.name">
+            <h2> Set your Values and Choose your Beer</h2>
+            <img src="./img/beer-clipart.png" width="75%">
+        </div> {{beerChoice |json}}
 </body>
 
 </html>
