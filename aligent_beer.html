@@ -13,16 +13,14 @@
     <![endif]-->
     <script src="./js/angular.1.6.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./js/bootstrap.jsa"></script>
+    <!--script src="./js/bootstrap.js"></script -->
 
-    <!-- Going to have to rewrite this section as going over the text I note it says "Write your own code" without any references to libraries or directives.. -->
-    <script src="./js/bootstrap-slider.js"></script>
     <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-    <script src="./js/rzslider.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css" />
-    <link rel="stylesheet" type="text/css" href="css/rzslider.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <title> Aligent Test Beer SPA</title>
@@ -64,7 +62,16 @@
                     </div>
                 </div>
 
+                <form method="post">
+                    <div data-role="rangeslider">
+                        <label for="price-min">Price:</label>
+                        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+                        <label for="price-max">Price:</label>
+                        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+                    </div>
 
+
+                </form>
 
                 <div class="sliders col-xs-10 col-xs-offset-1">
                     <h3>ABV</h3>
