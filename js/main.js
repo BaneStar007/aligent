@@ -92,7 +92,7 @@ app.controller('aligentControl', function ($scope, $http, $timeout) {
 
         $http({
             method: 'GET',
-            url: "http://api.brewerydb.com/v2/?key=" + apiKey,
+            url: "http://api.brewerydb.com/v2/?key=" + apiKey + "/beers",
             headers: { 'Content-Type': 'application/json' }
         }).then(listSuccessCallBack, listErrorCallBack);
     } // end of $scope.data
